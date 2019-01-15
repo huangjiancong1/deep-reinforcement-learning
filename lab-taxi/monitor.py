@@ -12,7 +12,6 @@ def interact(env, agent, num_episodes=20000, window=100):
     - agent: instance of class Agent (see Agent.py for details)
     - num_episodes: number of episodes of agent-environment interaction
     - window: number of episodes to consider when calculating average rewards
-
     Returns
     =======
     - avg_rewards: deque containing average rewards
