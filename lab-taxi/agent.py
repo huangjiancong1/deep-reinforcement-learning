@@ -6,7 +6,7 @@ import pdb
 
 class Agent:
 
-    def __init__(self, nA=6, alpha=0.01, gamma=0.99, eps=0.8):
+    def __init__(self, nA=6, alpha=1, gamma=0.99, eps=0.8):
         """ Initialize agent.
 
         Params

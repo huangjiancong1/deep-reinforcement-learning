@@ -19,8 +19,8 @@ def interact(env, agent, num_episodes=20000, window=100):
     """
     # initialize average rewards
     avg_rewards = deque(maxlen=num_episodes)
-    # update episode with decay = 0.999
-    agent.eps = agent.eps * 0.999
+    # # update episode with decay = 0.999
+    # agent.eps = agent.eps * 0.999
     # initialize best average reward
     best_avg_reward = -math.inf
     # initialize monitor for most recent rewards
@@ -31,6 +31,8 @@ def interact(env, agent, num_episodes=20000, window=100):
         state = env.reset()
         # initialize the sampled reward
         samp_reward = 0
+        # update epsilon
+        agent.eps = min (agent.eps / i_episode , 0.005)
         while True:
             # agent selects an action
             action = agent.select_action(state)
